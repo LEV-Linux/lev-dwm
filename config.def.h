@@ -10,12 +10,12 @@ static const unsigned int gappov    = 5;       /* vert outer gap between windows
 static       int smartgaps          = 1;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "monospace:size=10" };
+static const char *fonts[]          = { "monospace:size=10", "Symbola:size=12", "fontawesome:size=11" };
 static const char dmenufont[]       = "monospace:size=10";
 #include "/home/salahdin/.cache/wal/colors-wal-dwm.h"
 
 /* tagging */
-static const char *tags[] = { "Home", "Web", "Media", "Office", "5", "6", "7", "8", "9" };
+static const char *tags[] = { "💻", "🌐", "📼", "🏢", "5", "6", "7", "8", "9" };
 
 static const Rule rules[] = {
 	/* xprop(1):
