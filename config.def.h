@@ -25,7 +25,7 @@ static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Firefox",  NULL,       NULL,       1 << 1,       0,           -1 },
 	{ "mpv",      NULL,       NULL,       1 << 2,       0,           -1 },
-	{ "loffice",  NULL,       NULL,       1 << 3,       0,           -1 },
+	{ "Soffice",  NULL,       NULL,       1 << 3,       0,           -1 },
 };
 
 /* layout(s) */
