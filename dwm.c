@@ -58,25 +58,7 @@
 #define TEXTW(X)                (drw_fontset_getwidth(drw, (X)) + lrpad)
 
 /* enums */
-enum {
-	#if RESIZEPOINT_PATCH
-	CurResizeBR,
-	CurResizeBL,
-	CurResizeTR,
-	CurResizeTL,
-	#endif // RESIZEPOINT_PATCH
-	#if DRAGMFACT_PATCH
-	CurResizeHorzArrow,
-	CurResizeVertArrow,
-	#endif // DRAGMFACT_PATCH
-	#if DRAGCFACT_PATCH
-	CurIronCross,
-	#endif // DRAGCFACT_PATCH
-	CurNormal,
-	CurResize,
-	CurMove,
-	CurLast
-}; /* cursor */
+enum { CurResizeBR, CurResizeBL, CurResizeTR, CurResizeTL, CurNormal, CurResize, CurMove, CurResizeHorzArrow, CurResizeVertArrow, CurLast }; /* cursor */
 enum { SchemeNorm, SchemeSel, SchemeUrg }; /* color schemes */
 enum { NetSupported, NetWMName, NetWMState, NetWMCheck,
        NetWMFullscreen, NetActiveWindow, NetWMWindowType,
@@ -2156,20 +2138,13 @@ setup(void)
 	netatom[NetClientList] = XInternAtom(dpy, "_NET_CLIENT_LIST", False);
 	/* init cursors */
 	cursor[CurNormal] = drw_cur_create(drw, XC_left_ptr);
-	#if RESIZEPOINT_PATCH
 	cursor[CurResizeBR] = drw_cur_create(drw, XC_bottom_right_corner);
 	cursor[CurResizeBL] = drw_cur_create(drw, XC_bottom_left_corner);
 	cursor[CurResizeTR] = drw_cur_create(drw, XC_top_right_corner);
 	cursor[CurResizeTL] = drw_cur_create(drw, XC_top_left_corner);
 	cursor[CurMove] = drw_cur_create(drw, XC_fleur);
-	#endif // RESIZEPOINT_PATCH
-	#if DRAGMFACT_PATCH
 	cursor[CurResizeHorzArrow] = drw_cur_create(drw, XC_sb_h_double_arrow);
 	cursor[CurResizeVertArrow] = drw_cur_create(drw, XC_sb_v_double_arrow);
-	#endif // DRAGMFACT_PATCH
-	#if DRAGCFACT_PATCH
-	cursor[CurIronCross] = drw_cur_create(drw, XC_iron_cross);
-	#endif // DRAGCFACT_PATCH
 	/* init appearance */
 	scheme = ecalloc(LENGTH(colors), sizeof(Clr *));
 	for (i = 0; i < LENGTH(colors); i++)
