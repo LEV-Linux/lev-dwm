@@ -25,6 +25,8 @@ static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Firefox",  NULL,       NULL,       1 << 1,       0,           -1 },
 	{ "mpv",      NULL,       NULL,       1 << 2,       0,           -1 },
+	{ "mpv",      NULL,  "video0 - mpv",       0,       1,           -1 },
+	{ "mpv",      NULL,  "video1 - mpv",       0,       1,           -1 },
 	{ "Soffice",  NULL,       NULL,       1 << 3,       0,           -1 },
 };
 
@@ -110,6 +112,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_bracketleft,  togglefloating, {0} },
 	{ MODKEY|ControlMask,		XK_comma,  cyclelayout,    {.i = -1 } },
 	{ MODKEY|ControlMask,           XK_period, cyclelayout,    {.i = +1 } },
+	{ MODKEY|ControlMask,           XK_s,      togglesticky,   {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
 	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
