@@ -1,10 +1,13 @@
 # dwm - dynamic window manager
+![dwm logo](dwm.png)
+
 dwm is an extremely fast, small, and dynamic window manager for X.
 
 
 # Requirements
 In order to build dwm you need the Xlib header files.
-
+## Void Linux
+  `xbps-install libX11-devel libXinerama-devel libXft-devel fontconfig-devel`
 
 # Installation
 Edit config.mk to match your local setup (dwm is installed into
