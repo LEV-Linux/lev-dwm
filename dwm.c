@@ -1234,6 +1234,7 @@ focusdir(const Arg *arg)
 	if (f != s) {
 		focus(f);
 		restack(f->mon);
+		XWarpPointer(dpy, None, f->win, 0, 0, 0, 0, f->w/2, f->h/2);
 	}
 }
 
