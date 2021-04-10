@@ -28,6 +28,7 @@ static const Rule rules[] = {
 	{ "mpv",      NULL,  "video0 - mpv",       0,       1,           -1 },
 	{ "mpv",      NULL,  "video1 - mpv",       0,       1,           -1 },
 	{ "Soffice",  NULL,       NULL,       1 << 3,       0,           -1 },
+	{ "Telegram", NULL,       NULL,       1 << 4,       0,           -1 },
 };
 
 /* layout(s) */
