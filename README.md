@@ -37,11 +37,12 @@ or
 `slstatus &`
 
 # Configuration
-The configuration of dwm is done by creating a custom config.h
+The configuration of dwm is done by modifying config.def.h
 and (re)compiling the source code.
 
 
 # To Do
-*Filter needed layouts
-
-*Keybind needed layouts
+- Patch resize point
+- Make it possible to over write always center patch (sometimes I want a specific place for the window to be in but always center patch takes control)
+- Patch sticky window indicator
+- Add sticky window rule
