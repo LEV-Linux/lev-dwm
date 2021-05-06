@@ -46,3 +46,4 @@ and (re)compiling the source code.
 - Make it possible to over write always center patch (sometimes I want a specific place for the window to be in but always center patch takes control)
 - Patch sticky window indicator
 - Add sticky window rule
+- Add per tag support for gaps
