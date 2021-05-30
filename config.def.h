@@ -15,7 +15,7 @@ static const char dmenufont[]       = "monospace:size=10";
 #include "/home/salahdin/.cache/wal/colors-wal-dwm.h"
 
 /* tagging */
-static const char *tags[] = { "💻", "🌐", "📼", "🏢", "", "6", "7", "8", "9" };
+static const char *tags[] = { "💻", "🌐", "📼", "🏢", "", "", "7", "8", "9" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -29,6 +29,7 @@ static const Rule rules[] = {
 	{ "mpv",      NULL,  "video1 - mpv",       0,       1,           -1 },
 	{ "Soffice",  NULL,       NULL,       1 << 3,       0,           -1 },
 	{ "Telegram", NULL,       NULL,       1 << 4,       0,           -1 },
+	{ "Steam",    NULL,       NULL,       1 << 5,       0,           -1 },
 };
 
 /* layout(s) */
