@@ -12,7 +12,30 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "monospace:size=10", "Symbola:size=12", "fontawesome:size=11" };
 static const char dmenufont[]       = "monospace:size=10";
-#include "/home/salahdin/.cache/wal/colors-wal-dwm.h"
+#define pywal "/home/salahdin/.cache/wal/colors-wal-dwm.h"
+
+#if __has_include(pywal)
+#include pywal
+#else
+static const char norm_fg[] = "#9fb1c4";
+static const char norm_bg[] = "#0D070D";
+static const char norm_border[] = "#6f7b89";
+
+static const char sel_fg[] = "#9fb1c4";
+static const char sel_bg[] = "#495542";
+static const char sel_border[] = "#9fb1c4";
+
+static const char urg_fg[] = "#9fb1c4";
+static const char urg_bg[] = "#553A48";
+static const char urg_border[] = "#553A48";
+
+static const char *colors[][3]      = {
+    /*               fg           bg         border                         */
+    [SchemeNorm] = { norm_fg,     norm_bg,   norm_border }, // unfocused wins
+    [SchemeSel]  = { sel_fg,      sel_bg,    sel_border },  // the focused win
+    [SchemeUrg] =  { urg_fg,      urg_bg,    urg_border },
+};
+#endif
 
 /* tagging */
 static const char *tags[] = { "💻", "🌐", "📼", "🏢", "", "", "7", "8", "9" };
