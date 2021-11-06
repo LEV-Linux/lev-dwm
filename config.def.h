@@ -47,12 +47,18 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "qutebrowser",NULL,     NULL,       1 << 1,       0,           -1 },
+	{ "Firefox",  NULL,       NULL,       1 << 1,       0,           -1 },
+	{ "Chromium", NULL,       NULL,       1 << 1,       0,           -1 },
+	{ "Tor Browser",NULL,     NULL,       1 << 1,       1,           -1 },
+	{ "chromium", NULL,       NULL,       1 << 1,       0,           -1 },
 	{ "mpv",      NULL,       NULL,       1 << 2,       0,           -1 },
+	{ "vlc",      NULL,       NULL,       1 << 2,       0,           -1 },
 	{ "mpv",      NULL,  "video0 - mpv",       0,       1,           -1 },
 	{ "mpv",      NULL,  "video1 - mpv",       0,       1,           -1 },
 	{ "Soffice",  NULL,       NULL,       1 << 3,       0,           -1 },
 	{ "Telegram", NULL,       NULL,       1 << 4,       0,           -1 },
-	{ "Steam",    NULL,       NULL,       1 << 5,       0,           -1 },
+	{ "zoom",     NULL,       NULL,       1 << 4,       1,           -1 },
+	{ "Steam",    NULL,       NULL,       1 << 5,       1,           -1 },
 };
 
 /* layout(s) */
