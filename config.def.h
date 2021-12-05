@@ -50,6 +50,7 @@ static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "qutebrowser",NULL,     NULL,       1 << 1,       0,           -1 },
 	{ "Firefox",  NULL,       NULL,       1 << 1,       0,           -1 },
+	{ "Brave",  NULL,       NULL,       1 << 1,       0,           -1 },
 	{ "Chromium", NULL,       NULL,       1 << 1,       0,           -1 },
 	{ "Tor Browser",NULL,     NULL,       1 << 1,       1,           -1 },
 	{ "chromium", NULL,       NULL,       1 << 1,       0,           -1 },
@@ -112,7 +113,7 @@ static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY|ShiftMask,             XK_Return,  togglescratch,  {.v = scratchpadcmd } },
+	{ MODKEY|ShiftMask,             XK_Return, togglescratch,  {.v = scratchpadcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_b,      toggleextrabar, {0} },
 	{ MODKEY|ShiftMask,             XK_b,      toggleextrabar, {0} },
@@ -159,6 +160,7 @@ static Key keys[] = {
 	{ MODKEY|ControlMask,           XK_l,      shiftview,      {.i = +1 } },
 	{ MODKEY|ControlMask,           XK_h,      shiftview,      {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_s,      swapfocus,      {0} },
+	{ MODKEY|ShiftMask|ControlMask, XK_s,      togglecanfocusfloating,   {0} },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
