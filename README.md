@@ -47,3 +47,4 @@ and (re)compiling the source code.
 - Patch sticky window indicator
 - Add sticky window rule
 - Add per tag support for gaps
+- Add status2d with extrabar support
