@@ -1223,10 +1223,11 @@ focusdir(const Arg *arg)
 	unsigned int client_score;
 	int dist;
 	int dirweight = 20;
-	int isfloating = s->isfloating;
 
 	if (!s)
 		return;
+
+	int isfloating = s->isfloating;
 
 	next = s->next;
 	if (!next)
