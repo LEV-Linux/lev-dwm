@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 3;        /* border pixel of windows */
+static const unsigned int borderpx  = 0;        /* border pixel of windows */
 static const unsigned int snap      = 5;       /* snap pixel */
 static const unsigned int gappih    = 5;       /* horiz inner gap between windows */
 static const unsigned int gappiv    = 5;       /* vert inner gap between windows */
@@ -40,7 +40,7 @@ static const char *colors[][3]      = {
 #endif
 
 /* tagging */
-static const char *tags[] = { "💻", "🌐", "📼", "🏢", "", "", "7", "8", "9" };
+static const char *tags[] = { "💻", "🌐", "📼", "🏢", "", "", "7", "8", "9", "10" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -50,7 +50,7 @@ static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "qutebrowser",NULL,     NULL,       1 << 1,       0,           -1 },
 	{ "Firefox",  NULL,       NULL,       1 << 1,       0,           -1 },
-	{ "Brave",  NULL,       NULL,       1 << 1,       0,           -1 },
+	{ "Brave",    NULL,       NULL,       1 << 1,       0,           -1 },
 	{ "Chromium", NULL,       NULL,       1 << 1,       0,           -1 },
 	{ "Tor Browser",NULL,     NULL,       1 << 1,       1,           -1 },
 	{ "chromium", NULL,       NULL,       1 << 1,       0,           -1 },
@@ -62,6 +62,9 @@ static const Rule rules[] = {
 	{ "Telegram", NULL,       NULL,       1 << 4,       0,           -1 },
 	{ "zoom",     NULL,       NULL,       1 << 4,       1,           -1 },
 	{ "Steam",    NULL,       NULL,       1 << 5,       1,           -1 },
+	{ "Virt-manager",NULL,    NULL,       1 << 6,       0,           -1 },
+	{ NULL,       NULL,    "pulsemixer 9",  1 << 8,       0,           -1 },
+	{ NULL,       NULL,    "bluetoothctl 9",  1 << 8,       0,           -1 },
 };
 
 /* layout(s) */
@@ -189,6 +192,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
+	TAGKEYS(                        XK_F1,                     9)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 };
 
