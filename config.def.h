@@ -40,7 +40,7 @@ static const char *colors[][3]      = {
 #endif
 
 /* tagging */
-static const char *tags[] = { "💻", "🌐", "📼", "🏢", "", "", "7", "8", "9", "10" };
+static const char *tags[] = { "💻", "🌐", "📼", "🏢", "", "", "7", "8", "9", "10", "11", "12"};
 
 static const Rule rules[] = {
 	/* xprop(1):
