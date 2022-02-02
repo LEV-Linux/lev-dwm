@@ -63,8 +63,8 @@ static const Rule rules[] = {
 	{ "zoom",     NULL,       NULL,       1 << 4,       1,           -1 },
 	{ "Steam",    NULL,       NULL,       1 << 5,       1,           -1 },
 	{ "Virt-manager",NULL,    NULL,       1 << 6,       0,           -1 },
-	{ NULL,       NULL,    "pulsemixer 9",  1 << 8,       0,           -1 },
-	{ NULL,       NULL,    "bluetoothctl 9",  1 << 8,       0,           -1 },
+	{ NULL,       NULL,    "pulsemixer 9",1 << 8,       0,           -1 },
+	{ NULL,       NULL,    "bluetoothctl 9",1 << 8,     0,           -1 },
 };
 
 /* layout(s) */
@@ -193,7 +193,9 @@ static Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-	TAGKEYS(                        XK_F1,                     9)
+	TAGKEYS(                        XF86XK_Launch5,            9)
+	TAGKEYS(                        XF86XK_Launch6,            10)
+	TAGKEYS(                        XF86XK_Launch7,            11)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 };
 
@@ -301,3 +303,4 @@ static Signal signals[] = {
 	{ "setlayout",      setlayout },
 	{ "setlayoutex",    setlayoutex },
 };
+
