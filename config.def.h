@@ -12,9 +12,9 @@ static const int showbar            = 1;        /* 0 means no standard bar */
 static const int topbar             = 1;        /* 0 means standard bar at bottom */
 static const int extrabar           = 1;        /* 0 means no extra bar */
 static const char statussep         = ';';      /* separator between statuses */
-static const char *fonts[]          = { "monospace:size=10", "Symbola:size=12", "fontawesome:size=11" };
+static const char *fonts[]          = { "monospace:size=10", "fontawesome:size=11", "JoyPixels:pixelsize=11" };
 static const char dmenufont[]       = "monospace:size=10";
-#define pywal "/home/salahdin/.cache/wal/colors-wal-dwm.h"
+#define pywal "/home/salastro/.cache/wal/colors-wal-dwm.h"
 
 #if __has_include(pywal)
 #include pywal
@@ -40,7 +40,7 @@ static const char *colors[][3]      = {
 #endif
 
 /* tagging */
-static const char *tags[] = { "💻", "🌐", "📼", "🏢", "", "", "7", "8", "9", "10", "11", "12"};
+static const char *tags[] = { "💻", "🌐", "📼", "🏢", "📞", "🎮", "7", "8", "9", "10", "11", "12"};
 
 static const Rule rules[] = {
 	/* xprop(1):
