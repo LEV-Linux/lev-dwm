@@ -40,6 +40,17 @@ static const char *colors[][3]      = {
 };
 #endif
 
+static const char *const autostart[] = {
+    /* "sh", "-c", NULL, */
+    "clipmenud", NULL,
+    "dwmblocks", NULL,
+    "numlockx", NULL,
+    "picom", NULL,
+    "sxhkd", NULL,
+    "xss-lock", "slock", NULL,
+    NULL /* terminate */
+};
+
 /* tagging */
 static const char *tags[] = { "💻", "🌐", "📼", "🏢", "📞", "🎮", "7", "8", "9", "10", "11", "12"};
 
