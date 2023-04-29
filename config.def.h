@@ -134,10 +134,6 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_b,      toggleextrabar, {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
-	{ MODKEY|Mod1Mask,              XK_l,      focusdir,       {.i = 0 } }, // left
-	{ MODKEY|Mod1Mask,              XK_h,      focusdir,       {.i = 1 } }, // right
-	{ MODKEY|Mod1Mask,              XK_k,      focusdir,       {.i = 2 } }, // up
-	{ MODKEY|Mod1Mask,              XK_j,      focusdir,       {.i = 3 } }, // down
 	{ MODKEY,                       XK_Down,   moveresize,     {.v = "0x 25y 0w 0h" } },
 	{ MODKEY,                       XK_Up,     moveresize,     {.v = "0x -25y 0w 0h" } },
 	{ MODKEY,                       XK_Right,  moveresize,     {.v = "25x 0y 0w 0h" } },
