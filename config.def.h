@@ -3,6 +3,7 @@
 /* appearance */
 static const unsigned int borderpx  = 3;        /* border pixel of windows */
 static const unsigned int snap      = 5;       /* snap pixel */
+static const int swallowfloating    = 1;        /* 1 means swallow floating windows by default */
 static const unsigned int gappih    = 5;       /* horiz inner gap between windows */
 static const unsigned int gappiv    = 5;       /* vert inner gap between windows */
 static const unsigned int gappoh    = 5;       /* horiz outer gap between windows and screen edge */
@@ -47,24 +48,21 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "qutebrowser",NULL,     NULL,       1 << 1,       0,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 1,       0,           -1 },
-	{ "Brave",    NULL,       NULL,       1 << 1,       0,           -1 },
-	{ "Chromium", NULL,       NULL,       1 << 1,       0,           -1 },
-	{ "Tor Browser",NULL,     NULL,       1 << 1,       1,           -1 },
-	{ "chromium", NULL,       NULL,       1 << 1,       0,           -1 },
-	{ "mpv",      NULL,       NULL,       1 << 2,       0,           -1 },
-	{ "vlc",      NULL,       NULL,       1 << 2,       0,           -1 },
-	{ "mpv",      NULL,  "video0 - mpv",       0,       1,           -1 },
-	{ "mpv",      NULL,  "video1 - mpv",       0,       1,           -1 },
-	{ "Soffice",  NULL,       NULL,       1 << 3,       0,           -1 },
-	{ "Telegram", NULL,       NULL,       1 << 4,       0,           -1 },
-	{ "zoom",     NULL,       NULL,       1 << 4,       1,           -1 },
-	{ "Steam",    NULL,       NULL,       1 << 5,       1,           -1 },
-	{ "Virt-manager",NULL,    NULL,       1 << 6,       0,           -1 },
-	{ NULL,       NULL,    "pulsemixer 9",1 << 8,       0,           -1 },
-	{ NULL,       NULL,    "bluetoothctl 9",1 << 8,     0,           -1 },
+	/* class,         instance, title,          tags mask,              isfloating, isterminal, noswallow, monitor */
+    { "Firefox",      NULL,     NULL,           1  << 1,                0,          0,          -1,        -1 },
+    { "Brave",        NULL,     NULL,           1  << 1,                0,          0,          0,         -1 },
+    { "Chromium",     NULL,     NULL,           1  << 1,                0,          0,          0,         -1 },
+    { "Tor Browser",  NULL,     NULL,           1                 << 1, 1,          0,          0,         -1 },
+    { "chromium",     NULL,     NULL,           1  << 1,                0,          0,          0,         -1 },
+    { "mpv",          NULL,     NULL,           1  << 2,                0,          0,          0,         -1 },
+    { "vlc",          NULL,     NULL,           1  << 2,                0,          0,          0,         -1 },
+    { "Soffice",      NULL,     NULL,           1  << 3,                0,          0,          0,         -1 },
+    { "Telegram",     NULL,     NULL,           1  << 4,                0,          0,          0,         -1 },
+    { "zoom",         NULL,     NULL,           1  << 4,                1,          0,          0,         -1 },
+    { "Steam",        NULL,     NULL,           1  << 5,                1,          0,          0,         -1 },
+    { "Virt-manager", NULL,     NULL,           1                 << 6, 0,          0,          0,         -1 },
+    { "St",           NULL,     NULL,           0,                      0,          1,          0,         -1 },
+    { NULL,           NULL,     "Event Tester", 0,                      0,          0,          1,         -1 },  /* xev */
 };
 
 /* layout(s) */
