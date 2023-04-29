@@ -256,7 +256,6 @@ static void shiftviewclients(const Arg *arg);
 static void showhide(Client *c);
 static void sigchld(int unused);
 static void spawn(const Arg *arg);
-static void swapfocus();
 static void tag(const Arg *arg);
 static void tagmon(const Arg *arg);
 static void togglebar(const Arg *arg);
@@ -2686,17 +2685,6 @@ spawn(const Arg *arg)
 		fprintf(stderr, "dwm: execvp %s", ((char **)arg->v)[0]);
 		perror(" failed");
 		exit(EXIT_SUCCESS);
-	}
-}
-
-void
-swapfocus()
-{
-	Client *c;
-	for(c = selmon->clients; c && c != prevclient; c = c->next) ;
-	if(c == prevclient) {
-		focus(prevclient);
-		restack(prevclient->mon);
 	}
 }
 
