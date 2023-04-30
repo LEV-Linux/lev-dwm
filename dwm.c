@@ -210,6 +210,7 @@ static void focusin(XEvent *e);
 static void focusmon(const Arg *arg);
 static void focusstack(const Arg *arg);
 static Atom getatomprop(Client *c, Atom prop);
+static void getgaps(Monitor *m, int *oh, int *ov, int *ih, int *iv, unsigned int *nc);
 static int getrootptr(int *x, int *y);
 static long getstate(Window w);
 static int gettextprop(Window w, Atom atom, char *text, unsigned int size);
@@ -259,8 +260,9 @@ static void spawn(const Arg *arg);
 static void tag(const Arg *arg);
 static void tagmon(const Arg *arg);
 static void togglebar(const Arg *arg);
-static void togglefloating(const Arg *arg);
 static void togglecanfocusfloating(const Arg *arg);
+static void togglefloating(const Arg *arg);
+static void togglegaps(const Arg *arg);
 static void togglescratch(const Arg *arg);
 static void togglesticky(const Arg *arg);
 static void toggletag(const Arg *arg);
@@ -340,6 +342,7 @@ struct Pertag {
 	unsigned int curtag, prevtag; /* current and previous tag */
 	int nmasters[LENGTH(tags) + 1]; /* number of windows in master area */
 	float mfacts[LENGTH(tags) + 1]; /* mfacts per tag */
+    int enablegaps[LENGTH(tags) + 1]; /* vanitygaps per tag */
 	unsigned int sellts[LENGTH(tags) + 1]; /* selected layouts */
 	const Layout *ltidxs[LENGTH(tags) + 1][2]; /* matrix of tags and layouts indexes  */
 	int showbars[LENGTH(tags) + 1]; /* display bar for the current tag */
@@ -825,6 +828,7 @@ createmon(void)
 		m->pertag->nmasters[i] = m->nmaster;
 		m->pertag->mfacts[i] = m->mfact;
 
+        m->pertag->enablegaps[i] = enablegaps;
 		m->pertag->ltidxs[i][0] = m->lt[0];
 		m->pertag->ltidxs[i][1] = m->lt[1];
 		m->pertag->sellts[i] = m->sellt;
@@ -2792,6 +2796,13 @@ togglecanfocusfloating(const Arg *arg)
 }
 
 void
+togglegaps(const Arg *arg)
+{
+	selmon->pertag->enablegaps[selmon->pertag->curtag] = !selmon->pertag->enablegaps[selmon->pertag->curtag];
+	arrange(NULL);
+}
+
+void
 togglescratch(const Arg *arg)
 {
 	Client *c;
@@ -3301,6 +3312,25 @@ winpid(Window w)
 
 #endif /* __OpenBSD__ */
 	return result;
+}
+
+void
+getgaps(Monitor *m, int *oh, int *ov, int *ih, int *iv, unsigned int *nc)
+{
+	unsigned int n, oe, ie;
+	oe = ie = selmon->pertag->enablegaps[selmon->pertag->curtag];
+	Client *c;
+
+	for (n = 0, c = nexttiled(m->clients); c; c = nexttiled(c->next), n++);
+	if (smartgaps && n == 1) {
+		oe = 0; // outer gaps disabled when only one client
+	}
+
+	*oh = m->gappoh*oe; // outer horizontal gap
+	*ov = m->gappov*oe; // outer vertical gap
+	*ih = m->gappih*ie; // inner horizontal gap
+	*iv = m->gappiv*ie; // inner vertical gap
+	*nc = n;            // number of clients
 }
 
 pid_t
