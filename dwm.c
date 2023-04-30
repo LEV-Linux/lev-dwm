@@ -2812,6 +2812,8 @@ togglescratch(const Arg *arg)
 	} else
 		spawn(arg);
 }
+
+void
 togglesticky(const Arg *arg)
 {
 	if (!selmon->sel)
