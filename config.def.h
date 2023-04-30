@@ -128,8 +128,6 @@ static Key keys[] = {
 	/* modifier                     key             function                argument */
 	{ MODKEY|ShiftMask,             XK_Return,      togglescratch,          {.v = scratchpadcmd } },
 	{ MODKEY,                       XK_b,           togglebar,              {0} },
-	{ MODKEY,                       XK_b,           toggleextrabar,         {0} },
-	{ MODKEY|ShiftMask,             XK_b,           toggleextrabar,         {0} },
 	{ MODKEY,                       XK_j,           focusstack,             {.i = +1 } },
 	{ MODKEY,                       XK_k,           focusstack,             {.i = -1 } },
 	{ MODKEY|Mod1Mask,              XK_j,           moveresize,             {.v = "0x 25y 0w 0h" } },
