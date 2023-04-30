@@ -631,7 +631,7 @@ nrowgrid(Monitor *m)
 		return;
 
 	/* force 2 clients to always split vertically */
-	if (FORCE_VSPLIT && n == 2)
+	if (n == 2)
 		rows = 1;
 
 	/* never allow empty rows */
