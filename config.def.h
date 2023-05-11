@@ -47,7 +47,6 @@ static const char *const autostart[] = {
     "numlockx", NULL,
     "picom", NULL,
     "sxhkd", NULL,
-    "xautolock", "-time", "15", "-locker", "'doas ZZZ'", NULL,
     "xss-lock", "slock", NULL,
     NULL /* terminate */
 };
@@ -72,6 +71,7 @@ static const Rule rules[] = {
     { "Telegram",     NULL,     NULL,           1  << 4,                0,          0,          0,         -1 },
     { "zoom",         NULL,     NULL,           1  << 4,                1,          0,          0,         -1 },
     { "Steam",        NULL,     NULL,           1  << 5,                1,          0,          0,         -1 },
+    { "Lutris",       NULL,     NULL,           1  << 5,                1,          0,          0,         -1 },
     { "Virt-manager", NULL,     NULL,           1                 << 6, 0,          0,          0,         -1 },
     { "St",           NULL,     NULL,           0,                      0,          1,          0,         -1 },
     { NULL,           NULL,     "Event Tester", 0,                      0,          0,          1,         -1 },  /* xev */
