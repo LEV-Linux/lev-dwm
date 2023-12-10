@@ -47,12 +47,12 @@ static const char *const autostart[] = {
     "numlockx", NULL,
     "picom", NULL,
     "sxhkd", NULL,
-    "xss-lock", "slock", NULL,
+    // "xss-lock", "slock", NULL,
     NULL /* terminate */
 };
 
 /* tagging */
-static const char *tags[] = { "💻", "🌐", "📼", "🏢", "📞", "🎮", "7", "8", "9", "10", "11", "12"};
+static const char *tags[] = { "💻", "🌐", "🎶", "🏢", "🎮", "6", "7", "8", "9", "10", "11", "12"};
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -63,16 +63,14 @@ static const Rule rules[] = {
     { "Firefox",      NULL,     NULL,           1  << 1,                0,          0,          -1,        -1 },
     { "Brave",        NULL,     NULL,           1  << 1,                0,          0,          0,         -1 },
     { "Chromium",     NULL,     NULL,           1  << 1,                0,          0,          0,         -1 },
-    { "Tor Browser",  NULL,     NULL,           1                 << 1, 1,          0,          0,         -1 },
+    { "Tor Browser",  NULL,     NULL,           1  << 1,                1,          0,          0,         -1 },
     { "chromium",     NULL,     NULL,           1  << 1,                0,          0,          0,         -1 },
-    { "mpv",          NULL,     NULL,           1  << 2,                0,          0,          0,         -1 },
-    { "vlc",          NULL,     NULL,           1  << 2,                0,          0,          0,         -1 },
+    { "Spotify",      NULL,     NULL,           1  << 2,                0,          0,          0,         -1 },
     { "Soffice",      NULL,     NULL,           1  << 3,                0,          0,          0,         -1 },
-    { "Telegram",     NULL,     NULL,           1  << 4,                0,          0,          0,         -1 },
-    { "zoom",         NULL,     NULL,           1  << 4,                1,          0,          0,         -1 },
-    { "Steam",        NULL,     NULL,           1  << 5,                1,          0,          0,         -1 },
-    { "Lutris",       NULL,     NULL,           1  << 5,                1,          0,          0,         -1 },
-    { "Virt-manager", NULL,     NULL,           1                 << 6, 0,          0,          0,         -1 },
+    { "Steam",        NULL,     NULL,           1  << 4,                1,          0,          0,         -1 },
+    { "Lutris",       NULL,     NULL,           1  << 4,                1,          0,          0,         -1 },
+    { "zoom",         NULL,     NULL,           1  << 5,                1,          0,          0,         -1 },
+    { "Virt-manager", NULL,     NULL,           1  << 5,                0,          0,          0,         -1 },
     { "St",           NULL,     NULL,           0,                      0,          1,          0,         -1 },
     { NULL,           NULL,     "Event Tester", 0,                      0,          0,          1,         -1 },  /* xev */
     { "zenity",       "zenity", NULL,           0,                      0,          0,          1,         -1 },
@@ -192,6 +190,7 @@ static const Key keys[] = {
 	TAGKEYS(                        XF86XK_Launch6,                         10)
 	TAGKEYS(                        XF86XK_Launch7,                         11)
 	{ MODKEY|ShiftMask,             XK_q,           quit,                   {0} },
+	{ MODKEY|ControlMask|ShiftMask, XK_q,      quit,           {1} }, 
 };
 
 /* resizemousescroll direction argument list */
