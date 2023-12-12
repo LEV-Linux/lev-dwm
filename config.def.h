@@ -47,6 +47,8 @@ static const char *const autostart[] = {
     "numlockx", NULL,
     "picom", NULL,
     "sxhkd", NULL,
+    "touchegg", NULL,
+    "syndaemon", "-i", "0.5", "-t", "-K", "-R", NULL,
     // "xss-lock", "slock", NULL,
     NULL /* terminate */
 };
