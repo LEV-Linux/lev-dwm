@@ -191,8 +191,8 @@ static const Key keys[] = {
 	TAGKEYS(                        XF86XK_Launch5,                         9)
 	TAGKEYS(                        XF86XK_Launch6,                         10)
 	TAGKEYS(                        XF86XK_Launch7,                         11)
-	{ MODKEY|ShiftMask,             XK_q,           quit,                   {0} },
-	{ MODKEY|ControlMask|ShiftMask, XK_q,      quit,           {1} }, 
+	{ MODKEY,             XK_q,           quit,                   {1} },
+	{ MODKEY|ShiftMask, XK_q,           quit,                   {0} }, 
 };
 
 /* resizemousescroll direction argument list */
